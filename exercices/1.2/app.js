@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var { middleware, printStats } = require('./requestmiddleware');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -19,13 +18,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/films', filmsRouter);
-
-//middleware 1.3 exo
-app.use(middleware);
-
-app.use((req, res, next) => {
-    printStats();
-    next();
-  });
 
 module.exports = app;
