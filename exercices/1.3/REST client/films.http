@@ -27,3 +27,10 @@ Content-Type: application/json
     "link": "https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace"
 }
 
+### add new wrong film attempt error 400
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "id" : 1
+}

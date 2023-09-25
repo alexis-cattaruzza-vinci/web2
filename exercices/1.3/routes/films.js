@@ -74,7 +74,7 @@ router.post('/', (req, res) => {
     
     console.log('POST /films');
 
-    if(!title || !link || !duration || !budget) req.json('BAD REQUEST');
+    if(!title || !link || !duration || !budget) res.sendStatus(400);
 
     const lastIndexItem = films?.length !== 0 ? films.length-1 : undefined;
     const lastId = lastIndexItem !== undefined ? films[lastIndexItem]?.id : 0;
