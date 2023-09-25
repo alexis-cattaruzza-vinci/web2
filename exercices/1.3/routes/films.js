@@ -55,4 +55,37 @@ router.get('/:id', (req, res) =>{
     res.json(films[indexFilmFound]);
 });
 
+router.post('/', (req, res) => {
+    const title = 
+        req?.body?.title?.length !==0 ? req.body.title : undefined;
+
+    const link =
+        req?.body?.link?.length !== 0 ? req.body.link : undefined;
+
+    const duration = 
+        typeof req?.body?.duration !== 'number' || req.body.duration < 0
+        ? undefined
+        :req.body.duration;
+
+    const budget =
+        typeof req?.body?.budget !== "number"|| req.body.budget<0
+        ?undefined
+        :req.body.budget;
+    
+    console.log('POST /films');
+
+    if(!title || !link || !duration || !budget) req.json('BAD REQUEST');
+
+    const lastIndexItem = films?.length !== 0 ? films.length-1 : undefined;
+    const lastId = lastIndexItem !== undefined ? films[lastIndexItem]?.id : 0;
+    const nextId = lastId + 1;
+
+    const newFilm = {id: nextId, title, duration, budget, link};
+
+    films.push(newFilm);
+    
+    res.json(newFilm);
+
+});
+
 module.exports = router;

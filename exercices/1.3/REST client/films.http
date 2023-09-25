@@ -15,3 +15,15 @@ GET {{baseUrl}}/films/?minimum-duration=0
 ### Read films with id = 2
 GET {{baseUrl}}/films/2
 
+### Add new film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title": "Star Wars: The Phantom Menace (Episode I)",
+    "duration": 136,
+    "budget": 115,
+    "link": "https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace"
+}
+
