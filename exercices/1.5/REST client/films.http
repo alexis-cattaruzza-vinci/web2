@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:3000
+
+### Read all films
+GET {{baseUrl}}/films
+
+### Read all films with minimum-duration of 140min
+GET {{baseUrl}}/films/?minimum-duration=140
+
+### Read all films with minimum-duration of 90min
+GET {{baseUrl}}/films/?minimum-duration=90
+
+### Try to read films with wrong minimum-duration
+GET {{baseUrl}}/films/?minimum-duration=0
+
+### Read films with id = 2
+GET {{baseUrl}}/films/2
+
+### Add new film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title": "Star Wars: The Phantom Menace (Episode I)",
+    "duration": 136,
+    "budget": 115,
+    "link": "https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace"
+}
+
+### add new wrong film attempt error 400
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "id" : 1
+}
