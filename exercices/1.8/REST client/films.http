@@ -26,17 +26,6 @@ Content-Type: application/json
     "link":"https://www.findIt.com"
 }
 
-### Create another film
-POST {{baseUrl}}/films/
-Content-Type: application/json
-
-{
-    "title": "Agent Stone",
-    "duration": 125,
-    "budget": 131,
-    "link": "https://www.imdb.com/title/tt16230232/"
-}
-
 ### add new wrong film attempt error 400
 POST {{baseUrl}}/films
 Content-Type: application/json
