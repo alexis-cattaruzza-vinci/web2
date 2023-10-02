@@ -1,0 +1,105 @@
+@baseUrl = http://localhost:3000
+
+### Read all films
+GET {{baseUrl}}/films
+
+### Read all films with minimum-duration of 140min
+GET {{baseUrl}}/films/?minimum-duration=140
+
+### Read all films with minimum-duration of 90min
+GET {{baseUrl}}/films/?minimum-duration=90
+
+### Try to read films with wrong minimum-duration
+GET {{baseUrl}}/films/?minimum-duration=0
+
+### Read films with id = 2
+GET {{baseUrl}}/films/2
+
+### Create a film
+POST {{baseUrl}}/films/
+Content-Type: application/json
+
+{
+    "title":"Star Wars: Episode 2",
+    "duration": 1,
+    "budget": 11,
+    "link":"https://www.findIt.com"
+}
+
+### Create another film
+POST {{baseUrl}}/films/
+Content-Type: application/json
+
+{
+    "title": "Agent Stone",
+    "duration": 125,
+    "budget": 131,
+    "link": "https://www.imdb.com/title/tt16230232/"
+}
+
+### add new wrong film attempt error 400
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "id" : 1
+}
+
+### Delete film with id = 2
+DELETE {{baseUrl}}/films/2
+
+### Update film with id = 1
+PATCH {{baseUrl}}/films/1
+Content-Type: application/json
+
+{
+    "duration" : 150
+}
+
+### Try update a film with wrong id
+PATCH {{baseUrl}}/films/-1
+Content-Type: application/json
+
+{
+    "duration" : 120
+}
+
+### Try update a film with id = 2 with wrong parameters
+PATCH {{baseUrl}}/films/2
+Content-Type: application/json
+
+{
+    "wrongParam":"test"
+}
+
+### Update film with id = 2 with all params
+PUT {{baseUrl}}/films/2
+Content-Type: application/json
+
+{
+    "title" : "test",
+    "duration" : 125,
+    "budget": 500,
+    "link": "https://test.be"
+}
+
+### Create new film with ID == 6
+PUT {{baseUrl}}/films/6
+Content-Type: application/json
+
+{
+    "title":"Attack of the beast",
+    "duration": 666,
+    "budget": 666,
+    "link":"https://666"
+}
+
+### Try update a film with id = 2
+PUT {{baseUrl}}/films/2
+Content-Type: application/json
+
+{
+    "title" : "Agent 007"
+}
+
+
