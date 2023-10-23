@@ -1,0 +1,31 @@
+header {
+    background-color: rgb(210, 234, 255);
+}
+
+body {
+    background-color:#f4ab4d;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+h3 {
+    text-align: center;
+    text-decoration:dotted;
+}
+
+img {
+    text-align: center;
+    padding-top: 20px;
+}
+
+div {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(210, 234, 255);
+}
