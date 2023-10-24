@@ -29,3 +29,7 @@ div {
 footer {
     background-color: rgb(210, 234, 255);
 }
+
+.animate__animated.animate__bounce {
+    --animate-duration: 2s;
+  }
