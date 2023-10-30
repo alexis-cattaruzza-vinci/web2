@@ -1,0 +1,27 @@
+header {
+    background-color: rgb(210, 234, 255);
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+img {
+    text-align: center;
+    padding-top: 20px;
+    width: 50%;
+}
+
+footer {
+    background-color: rgb(210, 234, 255);
+    text-align: center;
+}
+div {
+    text-align: center;
+}
+
+p {
+    padding-bottom: 50px;
+}
