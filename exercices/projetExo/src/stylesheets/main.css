@@ -25,3 +25,28 @@ div {
 p {
     padding-bottom: 50px;
 }
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; /* Background color for the navbar */
+}
+
+li.nav-item {
+    float: left;
+}
+
+li.nav-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color when you hover over it */
+li.nav-item a:hover {
+    background-color: #555; /* Background color on hover */
+}
