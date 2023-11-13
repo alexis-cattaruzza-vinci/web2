@@ -26,27 +26,30 @@ p {
     padding-bottom: 50px;
 }
 
-ul.navbar {
+ul.navbar{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333; /* Background color for the navbar */
+    background-color: rgb(210, 234, 255);
 }
 
-li.nav-item {
+#nav1 {
+    display: inline;
     float: left;
+    margin-left: 40px;
+}
+#nav2 {
+    display: inline;
+    float: right;
+    margin-right: 40px;
 }
 
 li.nav-item a {
-    display: block;
-    color: white;
+
+    color: black;
+    font-size: 20px;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
-/* Change the link color when you hover over it */
 li.nav-item a:hover {
-    background-color: #555; /* Background color on hover */
+    background-color: #414aff; 
 }

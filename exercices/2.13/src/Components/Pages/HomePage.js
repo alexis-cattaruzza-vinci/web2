@@ -1,7 +1,7 @@
 import { renderHeaderTitle } from '../../utils/render';
 
 const EXPECTED_RECT_COUNT = 101;
-const DEFAULT_SHAPE_SIDE = 20;
+let DEFAULT_SHAPE_SIDE = 20;
 const DEFAULT_COLOR = 'red'; // 'rgba(255,0,0,0.5)';
 
 /**
@@ -15,6 +15,7 @@ const HomePage = () => {
   const mainHeight = main.clientHeight;
   let canvas;
   let canvasContext;
+  let animationRunning;
 
   renderHeaderTitle('Canvas Animation');
   renderCanvasWrapper();
@@ -31,6 +32,7 @@ const HomePage = () => {
     canvasContext = canvas.getContext('2d');
     canvas.width = mainWidth;
     canvas.height = mainHeight;
+    animationRunning = true;
   }
 
   /**
@@ -42,16 +44,29 @@ const HomePage = () => {
     const body = document.querySelector('body');
     body.style.overflow = 'hidden';
   }
+  canvas.addEventListener('mousedown', () => {
+    animationRunning = !animationRunning;
+    drawOneFrame();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === '+') {
+      DEFAULT_SHAPE_SIDE += 5;
+    } else if (event.key === '-') {
+      DEFAULT_SHAPE_SIDE = Math.max(DEFAULT_SHAPE_SIDE - 5, 5);
+    }
+  });
 
   function drawOneFrame() {
-    clearFrame();
+    if (animationRunning) {
+      clearFrame();
 
-    drawRectanglesAtRandomLocations();
-    // drawAlwaysFullRectanglesAtRandomLocations();
+      drawRectanglesAtRandomLocations();
+      // drawAlwaysFullRectanglesAtRandomLocations();
 
-    requestAnimationFrame(drawOneFrame);
+      requestAnimationFrame(drawOneFrame);
 
     // requestAnimationFrame(() => setTimeout(drawOneFrame, 1000));
+    }
   }
 
   function clearFrame() {
